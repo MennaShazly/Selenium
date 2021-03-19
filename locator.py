@@ -48,7 +48,6 @@ class RegisterPageLocators(object):
 class OpenCamLocators(object):
     #A class for all camera page locators.
 
-   CLOSE_BTN = (By.XPATH, "/html/body/div[2]/h2[1]/a")
    BACK_BTN = (By.XPATH, "/html/body/div[2]/h2[2]/a")
 
 

@@ -27,7 +27,6 @@ class Tests(unittest.TestCase):
         mypage.click_regist_btn()
 
 
-
     def test_attendance(self):
         mypage1 = page.HomePage(self.driver)
         mypage1.click_attendance()
@@ -43,11 +42,25 @@ class Tests(unittest.TestCase):
         mypage1 = page.HomePage(self.driver)
         mypage1.click_admin()
         mypage = page.AdminLoginPage(self.driver)
-        mypage.enter_username("mosa") #edit this
-        mypage.enter_pass("mosa123456789")  #edit this
+        mypage.enter_username("Mosa99") 
+        mypage.enter_pass("123456789") 
         mypage.check_show_pass()
         mypage.click_login_btn()
         #assert redirecting 
+
+    def test_error(self):
+        self.driver.get("file:///C:/Users/Menna%20Shazly/Desktop/New%20folder/app/templates/error.html")
+        self.driver.implicitly_wait(50)
+        mypage1 = page.ErrorPage(self.driver)
+        mypage1.click_home_btn()
+        assert "127.0.0.1:5000" in self.driver.title
+        
+    def test_cam(self):
+        self.driver.get("http://127.0.0.1:5000/attendance")
+        self.driver.implicitly_wait(50)
+        mypage = page.OpenCam(self.driver)
+        mypage.click_back_btn()
+        assert "127.0.0.1:5000" in self.driver.title
 
 
     def test_contact(self):

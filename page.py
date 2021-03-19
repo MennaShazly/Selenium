@@ -122,22 +122,20 @@ class RegisterPage(BasePage):
         element = Select(RegisterPageLocators.GENDER_BOX)
         element.select_by_visible_text(gender)
        
-
-
-class OpenCam(BasePage):
-    def click_close_btn(self):
-        element = self.driver.find_element(*OpenCamLocators.CLOSE_BTN)
-        element.click()
-
-    def click_back_btn(self):
-        element = self.driver.find_element(*OpenCamLocators.CLOSE_BTN)
-        element.click()
-    
-
 class ErrorPage(BasePage):  
     def click_home_btn(self):
         element = self.driver.find_element(*ErrorPageLocators.HOME_BTN)
         element.click()
+
+
+class OpenCam(BasePage):
+    
+    def click_back_btn(self):
+        element = self.driver.find_element(*OpenCamLocators.BACK_BTN)
+        element.click()
+    
+
+
 
 
 
